@@ -107,7 +107,7 @@
       checkboxes.forEach(cb=>{
         if(cb.checked){
           const row = cb.closest('tr');
-          const content = (row.cells[1]?.innerText || '').trim();
+          const content = (row.cells[2]?.innerText || '').trim();
           lines.push(`#${prefix}${number}. ${content}`);
           number++;
         }
@@ -116,7 +116,7 @@
         alert('Bạn chưa chọn hàng nào.');
         return;
       }
-      const text = lines.join('\\n');
+      const text = lines.join('\n');
       const ok = await copyToClipboard(text);
       const resEl = document.getElementById('result');
       const prevManual = document.getElementById('manualArea');
@@ -145,6 +145,7 @@
 <p class="text-center">Nhà phát triển website <a href="https://www.facebook.com/Developer.X.Ttp/" target="_blank" class="hover-1">Phong Tran </a></p>
 </body>
 </html>
+
 
 
 
